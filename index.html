@@ -4,30 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Send JS</title>
 </head>
 <body>
-  <form action="" method="post">
-      <input class="input" type="text" name="nome" placeholder="Nome">
-      <input class="input" type="text" name="crm" placeholder="CRM">
-      <input class="input" type="text" name="tel" placeholder="Telefone">
-      <select class="estados input" name="uf">
-        <option value="CE">Ce</option>
-      </select>
-      <input class="input" type="text" name="cidade" placeholder="Cidade">
-      <input type="submit">
-  </form>
+  <div class="post">
+    <p></p>
+  </div>
   <script src="Send.js"></script>
   <script>
-    // Send.get('https://jsonplaceholder.typicode.com/posts', (e) => {
-    //   e.forEach(element => {
-    //     console.log(element.id)
-    //   });
-    // });
+    let templeite = "";
+    Send.get('https://jsonplaceholder.typicode.com/posts', (e) => {
+      e.forEach(element => {
+        templeite += `
+          <h1>${element.title}</h1>
+          <p>${element.body}</p>
+        `;
+      });
 
-    Send.toSend('form', 'http://localhost/teste/Home/saveDoctor', 'POST', (e) => {
-      console.log(e)
-    })
+      document.body.innerHTML = templeite;
+    });
+
   </script>
 </body>
 </html>

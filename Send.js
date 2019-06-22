@@ -1,6 +1,15 @@
 class Send {
 
-  static toSend(form, route, method, operation) {
+  /**
+  |--------------------------------------------------------------------------
+  * @Author: Marcos Arthur Cruz De Oliveira
+  |--------------------------------------------------------------------------
+  * @E-mail: cruzartur61@gmail.com
+  * @GitHub: https://github.com/MarcosArthur?tab=repositories
+  * @linkedin: https://www.linkedin.com/in/marcos-arthur-630a56159/
+  */
+
+  static toSend(form, route, method, operation = null) {
     document.querySelector(form).addEventListener('submit', e => {
       e.preventDefault();
       fetch(route, {
