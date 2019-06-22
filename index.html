@@ -8,15 +8,26 @@
 </head>
 <body>
   <form action="" method="post">
-    <input type="submit" value="">
+      <input class="input" type="text" name="nome" placeholder="Nome">
+      <input class="input" type="text" name="crm" placeholder="CRM">
+      <input class="input" type="text" name="tel" placeholder="Telefone">
+      <select class="estados input" name="uf">
+        <option value="CE">Ce</option>
+      </select>
+      <input class="input" type="text" name="cidade" placeholder="Cidade">
+      <input type="submit">
   </form>
   <script src="Send.js"></script>
   <script>
-    Send.get('https://jsonplaceholder.typicode.com/posts', (e) => {
-      e.forEach(element => {
-        console.log(element.id)
-      });
-    });
+    // Send.get('https://jsonplaceholder.typicode.com/posts', (e) => {
+    //   e.forEach(element => {
+    //     console.log(element.id)
+    //   });
+    // });
+
+    Send.toSend('form', 'http://localhost/teste/Home/saveDoctor', 'POST', (e) => {
+      console.log(e)
+    })
   </script>
 </body>
 </html>

@@ -16,7 +16,9 @@ class Send {
           return;
         })
         .then(response => {
-          operation(response);
+          if (typeof operation === "function") {
+            operation(response);
+          }         
         })
         .catch(e => {
           new Error(e.statusText);
@@ -29,7 +31,9 @@ class Send {
     fetch(route)
       .then(response => response.json())
       .then(response => {
-        operation(response);
+        if (typeof operation === "function") {
+          operation(response);
+        }
       })
   }
 
