@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <title>Send JS</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      border: none;
+    }
+
+    body {
+      background: #282a2d;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      height: 97vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      width: 35%;
+      /* background: red; */
+    }
+
+    label {
+      color: #b0b2b3;
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+
+    input {
+      background: #1B1D20;
+      color: #ffffff;
+      border-top-color: rgb(14, 16, 19);
+      border-right-color: rgb(14, 16, 19);
+      border-bottom-color: rgb(14, 16, 19);
+      border-left-color: rgb(14, 16, 19);
+      display: block;
+      width: 100%;
+      border: 2px solid #0E1013;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: "Rubik", sans-serif;
+      font-weight: normal;
+      line-height: 1.2;
+      padding: 0.625rem 0 0.625rem 0.625rem;
+      margin-bottom: 0.625rem;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      outline: none;
+      -webkit-transition: border-color .3s;
+      transition: border-color .3s;
+    }
+
+    input:hover,
+    input:focus {
+      border-color: white;
+      outline: none;
+    }
+
+    .grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    button {
+      background: -webkit-gradient(linear, left top, left bottom, from(#9B30F9), to(#84e));
+      background: linear-gradient(#9B30F9, #84e);
+      -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.2;
+      border-radius: 4px;
+      border: none;
+      color: #ffffff;
+      padding: 0.8375rem 1.25rem;
+      display: block;
+      cursor: pointer;
+      text-align: center;
+      min-width: 130px;
+    }
+
+    button:hover {
+      background: #0E1013;
+    }
+
+    .grid a {
+      color: #8943ef;
+      text-decoration: none;
+    }
+
+    footer {
+      width: 100%;
+      height: 3vh;
+      padding: 0px 10px;
+      background: -webkit-gradient(linear, left top, left bottom, from(#9B30F9), to(#84e));
+      background: linear-gradient(#9B30F9, #84e);
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container" >
+    <form method="post" id="login">
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email">
+      <label for="password">Senha</label>
+      <input type="password" name="password" id="password">
+      <div class="grid">
+        <button form="login">Acessar</button>
+        <a href="#">Perdeu sua senha?</a>
+      </div>
+    </form>
+  </section>
+
+
+  <footer>
+    <p>Theme <a href="https://www.origamid.com/" target="_blanck">Origamid</a></p>
+  </footer>
+
+  <script src="Send.js"></script>
+  <script>
+
+    // EXEMPLO DE ENVIO DE DADOS PARA SERVIDOR
+    Send.toSend('form', './doLogin', 'POST', e => {
+      // manipule a resposta aqui
+      console.log(e);
+    });
+  </script>
+</body>
+
+</html>

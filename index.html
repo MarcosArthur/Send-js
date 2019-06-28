@@ -1,57 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   <title>Send JS</title>
   <style>
-body {
-	background: #F6F9FC;
-	margin: 20px;
-}
+    body {
+      background: #F6F9FC;
+      margin: 20px;
+      font-family: 'Rubik', sans-serif;
+    }
 
-section {
-	max-width: 950px;
-	margin: 0 auto;
-	column-count: 3;
-}
+    section {
+      max-width: 950px;
+      margin: 0 auto;
+      column-count: 3;
+    }
 
-@media (max-width: 400px) {
-	section {
-		column-count: 2;
-	}
-}
+    @media (max-width: 400px) {
+      section {
+        column-count: 2;
+      }
+    }
 
-div img {
-	display: block;
-	max-width: 100%;
-}
+    div img {
+      display: block;
+      max-width: 100%;
+    }
 
-div {
-	background: white;
-	margin-bottom: 20px;
-  padding: 10px;
-	border-radius: 4px;
-	box-shadow: 0 2px 6px rgba(50,50,90,.1);
-	break-inside: avoid-column;
-	overflow: hidden;
-}
+    div {
+      background: white;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(50, 50, 90, .1);
+      break-inside: avoid-column;
+      overflow: hidden;
+    }
 
-div p {
-	padding: 10px;
-	font-family: sans-serif;
-	color: #6B7C93;
-	font-size: .875em;
-	line-height: 1.4em;
-}
-
+    div p {
+      padding: 10px;
+      font-family: sans-serif;
+      color: #6B7C93;
+      font-size: .875em;
+      line-height: 1.4em;
+    }
   </style>
 </head>
-<body>
- <section class="container">
 
- </section>
+<body>
+  <section class="container">
+
+  </section>
   <script src="Send.js"></script>
   <script>
 
@@ -72,16 +75,7 @@ div p {
       document.querySelector('.container').innerHTML = templeite;
     });
 
-
-
-    // ENVIO DADOS COM FORMULARIO
-
-
-    // Send.toSend('form', './doLoggin', 'POST', (e) => {
-    //   console.log(e)
-    // })
-
-
   </script>
 </body>
+
 </html>

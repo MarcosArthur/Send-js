@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <title>Send JS</title>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      border: none;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .section-register-user {
+      min-height: 55vh;
+      height: auto;
+      width: 70%;
+    }
+
+    .title {
+      margin-bottom: 10px;
+    }
+
+    .input {
+      width: 100%;
+      background: #e8ebed;
+      border-radius: 4px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      display: block;
+    }
+
+    .btn {
+      cursor: pointer;
+      padding: 10px 20px;
+      color: white;
+      background: #AA88FF;
+      border-radius: 4px;
+      transition: all .2s;
+      margin-top: 5px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section-register-user">
+    <h1 class="title">Consulta Estabelecimento</h1>
+    <form style="margin-bottom: 10px;">
+      <input class="input searchUser" type="search" name="search" placeholder="Busca De Estabelecimento" list="list">
+    </form>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Categoria</td>
+          <td>Açôes</td>
+        </tr>
+      </thead>
+
+      <tbody class='tbody'>
+        <tr>
+          <td>Armazem Paraiba</td>
+          <td>Alimenticio</td>
+          <td>
+            <button class="btn" data-id="1">Apagar</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Armazem Paraiba</td>
+          <td>Alimenticio</td>
+          <td>
+            <button class="btn" data-id="1">Apagar</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Armazem Paraiba</td>
+          <td>Alimenticio</td>
+          <td>
+            <button class="btn" data-id="1">Apagar</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </section>
+  <script src="Send.js"></script>
+
+  <script>
+    let buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(e => {
+      e.addEventListener('click', element => {
+        let id = element.target.dataset.id;
+        Send.sendForLink(`./delete/${id}`, e => {
+          console.log(e)
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

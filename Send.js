@@ -46,4 +46,20 @@ class Send {
       })
   }
 
+  static sendForLink(route, operation = null) {
+    fetch(route)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+
+      new Error('error')
+    })
+    .then(response => {
+      if (typeof operation === "function") {
+        operation(response);
+      }
+    })
+  }
+
 }
